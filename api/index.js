@@ -5,7 +5,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect(
+    "mongodb+srv://priyanshu:qwerty1234%40@bitblog.s7rwmfh.mongodb.net/bitblog?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
   .then(() => {
     console.log("MongoDB is connected");
   })
@@ -15,4 +18,8 @@ mongoose
 const app = express();
 app.listen(3000, () => {
   console.log("Server running on port 3000!");
+});
+
+app.get("/test", (req, res) => {
+  res.json({ message: "API is working" });
 });
