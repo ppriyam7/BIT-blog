@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 
 mongoose.connect(
-  "mongodb+srv://priyanshu:qwerty1234@@bitblog.s7rwmfh.mongodb.net/bitblog?retryWrites=true&w=majority"
+  "mongodb+srv://priyanshu:qwerty1234%40@bitblog.s7rwmfh.mongodb.net/bitblog?retryWrites=true&w=majority"
 );
 
 const app = express();
