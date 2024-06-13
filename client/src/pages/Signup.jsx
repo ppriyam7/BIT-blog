@@ -1,26 +1,36 @@
-import { Button, Label, TextInput } from "flowbite-react";
+import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Signup() {
   const [formData, setFormData] = useState({});
-  // const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
-  // console.log(formData);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
+    if (!formData.username || !formData.email || !formData.password)
+      return setErrorMessage("Please fill out all the fields!");
     try {
+      setLoading(true);
+      setErrorMessage(null);
       const res = await fetch("http://localhost:3000/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+      const data = await res.json();
+      if (data.success === false) return setErrorMessage(data.message);
+      setLoading(false);
+      if (res.ok) navigate("/sign-in");
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.message);
+      setLoading(false);
     }
   };
   return (
@@ -70,8 +80,19 @@ export default function Signup() {
                 onChange={handleChange}
               />
             </div>
-            <Button gradientDuoTone="redToYellow" type="submit">
-              Sign Up
+            <Button
+              gradientDuoTone="redToYellow"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <Spinner size="sm" />
+                  <span className="pl-3">Loading...</span>
+                </>
+              ) : (
+                "Sign Up"
+              )}
             </Button>
           </form>
           <div className="flex gap-1 text-sm mt-4">
@@ -80,6 +101,11 @@ export default function Signup() {
               Sign-in
             </Link>
           </div>
+          {errorMessage && (
+            <Alert className="mt-5" color="failure">
+              {errorMessage}
+            </Alert>
+          )}
         </div>
       </div>
     </div>
