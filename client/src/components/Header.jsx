@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Button } from "flowbite-react";
 import { FaMoon } from "react-icons/fa";
+import { useSelector } from "react-redux";
+
 export default function Header() {
   const path = useLocation().pathname;
   return (
