@@ -2,16 +2,35 @@ import { Button, TextInput } from "flowbite-react";
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { getStorage, uploadBytesResumable, ref } from "firebase/storage";
+import {
+  getStorage,
+  uploadBytesResumable,
+  ref,
+  getDownloadURL,
+} from "firebase/storage";
 import { app } from "../firebase";
+import {
+  updateFailure,
+  updateStart,
+  updateSuccess,
+} from "../redux/user/userSlice";
+import { useDispatch } from "react-redux";
 function DashProfile() {
   const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const [imageFile, setImageFile] = useState(null);
   const [imageFileUrl, setImageFileUrl] = useState(null);
   const [imageFileUploadingProgress, setImageFileUploadingProgress] =
     useState(null);
   const [imageFileUploadError, setImageUploadError] = useState(null);
+  const [updateUserSuccess, setUpdateUserSuccess] = useState(null);
+  const [updateUserError, setUpdateUserError] = useState(null);
+  const [formData, setFormData] = useState({});
   const filePicker = useRef();
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+    console.log(formData);
+  };
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -37,8 +56,41 @@ function DashProfile() {
       },
       (error) => {
         setImageUploadError("Could not upload image!");
+        setImageFileUploadingProgress(null);
+        setImageFile(null);
+        setImageFileUrl(null);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImageFileUrl(downloadURL);
+          setFormData({ ...formData, profilePicture: downloadURL });
+        });
       }
     );
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (Object.keys(formData).length === 0) {
+      setUpdateUserError(null);
+      setUpdateUserSuccess(null);
+      return;
+    }
+    try {
+      dispatch(updateStart());
+      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        dispatch(updateFailure(data.message));
+      }
+    } catch (error) {
+      dispatch(updateFailure(error.message));
+    }
   };
   return (
     <div className="max-w-lg mx-auto p-3 w-full">
@@ -68,18 +120,21 @@ function DashProfile() {
           id="username"
           placeholder="username"
           defaultValue={currentUser.username}
+          onChange={handleChange}
         />
         <TextInput
           type="email"
           id="email"
           placeholder="email"
           defaultValue={currentUser.email}
+          onChange={handleChange}
         />
         <TextInput
           type="password"
           id="password"
           placeholder="password"
           defaultValue="********"
+          onChange={handleChange}
         />
         <Button
           type="submit"

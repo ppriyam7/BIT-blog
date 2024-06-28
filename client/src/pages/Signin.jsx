@@ -16,7 +16,8 @@ export default function Signin() {
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+    if (e.target && e.target.id)
+      setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
