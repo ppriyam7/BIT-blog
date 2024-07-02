@@ -102,10 +102,10 @@ export default function CreatePost() {
               setFormData({ ...formData, category: e.target.value })
             }
           >
-            <option value="uncategorized">Select a category</option>
-            <option value="javascript">JavaScript</option>
-            <option value="reactjs">React.js</option>
-            <option value="nextjs">Next.js</option>
+            <option value="uncategorized">Select a category:</option>
+            <option value="educational">Educational</option>
+            <option value="fun">Fun</option>
+            <option value="imp">Important</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
@@ -116,7 +116,7 @@ export default function CreatePost() {
           />
           <Button
             type="button"
-            gradientDuoTone="purpleToBlue"
+            gradientDuoTone="redToYellow"
             size="sm"
             outline
             onClick={handleUpdloadImage}
@@ -151,7 +151,7 @@ export default function CreatePost() {
             setFormData({ ...formData, content: value });
           }}
         />
-        <Button type="submit" gradientDuoTone="redToYellow">
+        <Button type="submit" gradientDuoTone="redToYellow" outline>
           Publish
         </Button>
         {publishError && (
