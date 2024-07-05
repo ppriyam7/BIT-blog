@@ -34,7 +34,7 @@ export default function Header() {
         className="self-center whitespace-nowrap text-sm sm:text-xl font-bold dark:text-white"
       >
         <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-red-400 rounded-lg text-white">
-          BIT's
+          BIT
         </span>
         Blog
       </Link>
