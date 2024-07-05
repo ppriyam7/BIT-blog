@@ -21,7 +21,7 @@ export default function CallToAction() {
         </Button>
       </div>
       <div className="p-7 flex-1">
-        <img src="https://openthemagazine.com/wp-content/uploads/2023/07/BITS.jpg" />
+        <img src="https://qph.cf2.quoracdn.net/main-qimg-b9dcaa42e9435ca96be2965f0f75c336-lq" />
       </div>
     </div>
   );

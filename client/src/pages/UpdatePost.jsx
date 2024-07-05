@@ -133,9 +133,9 @@ export default function UpdatePost() {
             value={formData.category}
           >
             <option value="uncategorized">Select a category</option>
-            <option value="javascript">JavaScript</option>
-            <option value="reactjs">React.js</option>
-            <option value="nextjs">Next.js</option>
+            <option value="Fun">Fun</option>
+            <option value="Educational">Educational</option>
+            <option value="Opportunities">Opportunities</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
@@ -146,7 +146,7 @@ export default function UpdatePost() {
           />
           <Button
             type="button"
-            gradientDuoTone="purpleToBlue"
+            gradientDuoTone="redToYellow"
             size="sm"
             outline
             onClick={handleUpdloadImage}

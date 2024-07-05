@@ -27,7 +27,7 @@ export default function Home() {
           to="/search"
           className="text-xs sm:text-sm text-teal-500 font-bold hover:underline"
         >
-          View all posts
+          View all posts→
         </Link>
       </div>
       <div className="p-3 bg-amber-100 dark:bg-slate-700">
@@ -47,7 +47,7 @@ export default function Home() {
               to={"/search"}
               className="text-lg text-teal-500 hover:underline text-center font-semibold"
             >
-              View all posts
+              View all posts→
             </Link>
           </div>
         )}
