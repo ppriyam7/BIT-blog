@@ -7,20 +7,21 @@ export default function CallToAction() {
         <h2 className="text-2xl">Want to learn more about BIT Mesra?</h2>
         <p className="text-gray-500 my-2">Checkout the website!</p>
         <Button
-          gradientDuoTone="purpleToPink"
+          gradientDuoTone="redToYellow"
+          outline
           className="rounded-tl-xl rounded-bl-none"
         >
           <a
-            href="https://www.100jsprojects.com"
+            href="https://bitmesra.ac.in"
             target="_blank"
             rel="noopener noreferrer"
           >
-            100 JavaScript Projects
+            Jharkhand's Pride: BIT Mesra
           </a>
         </Button>
       </div>
       <div className="p-7 flex-1">
-        <img src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg" />
+        <img src="https://openthemagazine.com/wp-content/uploads/2023/07/BITS.jpg" />
       </div>
     </div>
   );

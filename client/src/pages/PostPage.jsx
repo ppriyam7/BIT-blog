@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import CallToAction from "../components/CallToAction";
 import CommentSection from "../components/CommentSection";
 import PostCard from "../components/PostCard";
+import { useSelector } from "react-redux";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -11,7 +12,6 @@ export default function PostPage() {
   const [error, setError] = useState(false);
   const [post, setPost] = useState(null);
   const [recentPosts, setRecentPosts] = useState(null);
-
   useEffect(() => {
     const fetchPost = async () => {
       try {
@@ -88,6 +88,7 @@ export default function PostPage() {
       <div className="max-w-4xl mx-auto w-full">
         <CallToAction />
       </div>
+      {console.log(post)}
       <CommentSection postId={post._id} />
 
       <div className="flex flex-col justify-center items-center mb-5">
