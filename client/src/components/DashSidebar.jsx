@@ -1,6 +1,11 @@
 import { Sidebar } from "flowbite-react";
 import React from "react";
-import { HiArrowSmRight, HiOutlineUserGroup, HiUser } from "react-icons/hi";
+import {
+  HiAnnotation,
+  HiArrowSmRight,
+  HiOutlineUserGroup,
+  HiUser,
+} from "react-icons/hi";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { signoutSuccess } from "../redux/user/userSlice";
@@ -62,17 +67,30 @@ function DashSidebar() {
             </Link>
           )}
           {currentUser.isAdmin && (
-            <Link to="/dashboard?tab=users">
-              <Sidebar.Item
-                active={tab === "users"}
-                icon={HiOutlineUserGroup}
-                label={currentUser.isAdmin ? "Admin" : "User"}
-                labelColor="dark"
-                as="div"
-              >
-                Users
-              </Sidebar.Item>
-            </Link>
+            <>
+              <Link to="/dashboard?tab=users">
+                <Sidebar.Item
+                  active={tab === "users"}
+                  icon={HiOutlineUserGroup}
+                  label={currentUser.isAdmin ? "Admin" : "User"}
+                  labelColor="dark"
+                  as="div"
+                >
+                  Users
+                </Sidebar.Item>
+              </Link>
+              <Link to="/dashboard?tab=comments">
+                <Sidebar.Item
+                  active={tab === "comments"}
+                  icon={HiAnnotation}
+                  label={currentUser.isAdmin ? "Admin" : "User"}
+                  labelColor="dark"
+                  as="div"
+                >
+                  Comments
+                </Sidebar.Item>
+              </Link>
+            </>
           )}
           <Sidebar.Item
             icon={HiArrowSmRight}

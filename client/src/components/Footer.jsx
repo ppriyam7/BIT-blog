@@ -12,7 +12,7 @@ export default function FooterCom() {
               className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white"
             >
               <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-red-400 rounded-lg text-white">
-                BIT's
+                BIT
               </span>
               Blog
             </Link>
@@ -33,12 +33,12 @@ export default function FooterCom() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  BIT's Blog
+                  BIT Blog
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title="Follow us" />
+              <Footer.Title title="FOLLOW THE DEV😎" />
               <Footer.LinkGroup col>
                 <Footer.Link
                   href="https://www.github.com/ppriyam07"
@@ -47,7 +47,12 @@ export default function FooterCom() {
                 >
                   Github
                 </Footer.Link>
-                <Footer.Link href="#">Discord</Footer.Link>
+                <Footer.Link
+                  href="https://www.linkedin.com/in/priyanshupriyam/"
+                  target="_blank"
+                >
+                  LinkedIn
+                </Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -63,7 +68,7 @@ export default function FooterCom() {
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright
             href="#"
-            by="BIT's blog"
+            by="BIT Blog"
             year={new Date().getFullYear()}
           />
         </div>

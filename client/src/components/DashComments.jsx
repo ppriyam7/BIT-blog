@@ -80,8 +80,8 @@ function DashComments() {
               <Table.HeadCell>Date updated</Table.HeadCell>
               <Table.HeadCell>Comment content</Table.HeadCell>
               <Table.HeadCell>Number of likes</Table.HeadCell>
-              <Table.HeadCell>PostId</Table.HeadCell>
-              <Table.HeadCell>UserId</Table.HeadCell>
+              <Table.HeadCell>PostID</Table.HeadCell>
+              <Table.HeadCell>UserID</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>
             </Table.Head>
             {comments.map((comment) => (
@@ -136,10 +136,10 @@ function DashComments() {
             </h3>
             <div className="flex justify-center gap-4">
               <Button color="failure" onClick={handleDeleteComment}>
-                Yes, I'm sure
+                Yes, I'm sure.
               </Button>
               <Button color="gray" onClick={() => setShowModal(false)}>
-                No, cancel
+                No, cancel.
               </Button>
             </div>
           </div>
