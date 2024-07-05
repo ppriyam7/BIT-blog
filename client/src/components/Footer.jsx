@@ -11,7 +11,7 @@ export default function FooterCom() {
               to="/"
               className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white"
             >
-              <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-red-400 rounded-lg text-white">
+              <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-red-400 rounded-lg text-white bold">
                 BIT
               </span>
               Blog
@@ -41,11 +41,11 @@ export default function FooterCom() {
               <Footer.Title title="FOLLOW THE DEV😎" />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href="https://www.github.com/ppriyam07"
+                  href="https://www.github.com/ppriyam7"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Github
+                  GitHub
                 </Footer.Link>
                 <Footer.Link
                   href="https://www.linkedin.com/in/priyanshupriyam/"
