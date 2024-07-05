@@ -151,7 +151,7 @@ export default function CommentSection({ postId }) {
             <p className="text-gray-500 text-xs">
               {200 - comment.length} characters remaining
             </p>
-            <Button outline gradientDuoTone="purpleToBlue" type="submit">
+            <Button outline gradientDuoTone="redToYellow" type="submit" outline>
               Submit
             </Button>
           </div>
@@ -204,10 +204,10 @@ export default function CommentSection({ postId }) {
                 color="failure"
                 onClick={() => handleDelete(commentToDelete)}
               >
-                Yes, I'm sure
+                Yes, I'm sure.
               </Button>
               <Button color="gray" onClick={() => setShowModal(false)}>
-                No, cancel
+                No, cancel.
               </Button>
             </div>
           </div>

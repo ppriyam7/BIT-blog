@@ -11,6 +11,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import OnlyAdminPrivateRoute from "./components/OnlyAdminPrivateRoute";
 import CreatePost from "./pages/PostPage";
 import UpdatePost from "./pages/UpdatePost";
+import PostPage from "./pages/PostPage";
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ function App() {
           <Route path="/update-post/:postId" element={<UpdatePost />} />
         </Route>
         <Route path="/projects" element={<Projects />} />;
+        <Route path="/post/:postSlug" element={<PostPage />} />;
         <Route path="/sign-up" element={<Signup />} />
       </Routes>
       <Footer />

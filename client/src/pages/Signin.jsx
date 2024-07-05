@@ -83,6 +83,7 @@ export default function Signin() {
               gradientDuoTone="redToYellow"
               type="submit"
               disabled={loading}
+              outline
             >
               {loading ? (
                 <>

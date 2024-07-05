@@ -78,7 +78,8 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
               <Button
                 type="button"
                 size="sm"
-                gradientDuoTone="purpleToBlue"
+                gradientDuoTone="redToYellow"
+                outline
                 onClick={handleSave}
               >
                 Save
