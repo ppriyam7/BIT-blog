@@ -58,8 +58,15 @@ export default function FooterCom() {
             <div>
               <Footer.Title title="Legal" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">Privacy Policy</Footer.Link>
-                <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
+                <Footer.Link href="https://pacman.live/" target="_blank">
+                  Privacy Policy
+                </Footer.Link>
+                <Footer.Link
+                  href="https://www.elon.edu/u/imagining/about/kidzone/jokes-laughs/"
+                  target="_blank"
+                >
+                  Terms &amp; Conditions
+                </Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>

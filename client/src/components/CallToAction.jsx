@@ -4,12 +4,16 @@ export default function CallToAction() {
   return (
     <div className="flex flex-col sm:flex-row p-3 border border-teal-500 justify-center items-center rounded-tl-3xl rounded-br-3xl text-center">
       <div className="flex-1 justify-center flex flex-col">
-        <h2 className="text-2xl">Want to learn more about BIT Mesra?</h2>
-        <p className="text-gray-500 my-2">Checkout the website!</p>
+        <h2 className="text-4xl font-bold">
+          Want to learn more about BIT Mesra?
+        </h2>
+        <p className="text-gray-500 my-2 mt-5">
+          Checkout the official website!
+        </p>
         <Button
           gradientDuoTone="redToYellow"
           outline
-          className="rounded-tl-xl rounded-bl-none"
+          className="rounded-tl-xl rounded-bl-none mt-4"
         >
           <a
             href="https://bitmesra.ac.in"
