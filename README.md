@@ -1,17 +1,27 @@
 BIT-Blog 📚✨
-BIT-Blog is a dynamic blogging platform designed for college students, built using the MERN stack (MongoDB, Express.js, React, and Node.js). This platform provides a rich set of features for both admins and users to manage and interact with blog posts effectively.
+
+BIT-Blog is a dynamic blogging platform designed for college students, built using the MERN stack (MongoDB, Express.js, React, and Node.js).
+
+This platform provides a rich set of features for both admins and users to manage and interact with blog posts effectively.
 
 ---
 
 Features 🚀
 Admin Dashboard: 🎛️ Allows administrators to create, edit, and update blog posts with ease. The dashboard offers a user-friendly interface to manage content efficiently.
+
 User Interaction: 💬 Users can comment on posts and like comments, fostering engagement and interaction within the community.
+
 Comment Management: 🛠️ Admins have control over user comments, with the ability to manage and moderate them through the admin dashboard.
+
 Technologies Used 🛠️
+
 MongoDB: 🗃️ NoSQL database used for storing blog posts, user information, and comments.
-Express.js: 🌐 Web application framework for Node.js, providing backend functionality and API endpoints.
-React: ⚛️ Frontend library for building the user interface, offering a responsive and interactive experience.
-Node.js: 🖥️ JavaScript runtime for building the server-side logic and handling requests.
+
+ExpressJS: 🌐 Web application framework for Node.js, providing backend functionality and API endpoints.
+
+ReactJS: ⚛️ Frontend library for building the user interface, offering a responsive and interactive experience.
+
+NodeJS: 🖥️ JavaScript runtime for building the server-side logic and handling requests.
 
 ---
 
@@ -21,12 +31,13 @@ To get started with BIT-Blog, follow these steps:
 Clone the Repository:
 bash
 Copy code
-git clone https://github.com/yourusername/BIT-Blog.git
+git clone https://github.com/ppriyam7/bit-blog
 
 Navigate to the Project Directory:
 bash
 Copy code
 cd BIT-Blog
+
 Install Dependencies:
 
 Backend:
@@ -67,6 +78,7 @@ Access the Application: 🌐 Open your browser and navigate to http://localhost:
 
 Usage 📝
 Admin Features: 🔧 Log in as an admin to access the dashboard where you can create, edit, and update blog posts.
+
 User Features: 🖋️ Users can browse posts, leave comments, and like comments to participate in discussions.
 
 ---
