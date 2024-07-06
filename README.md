@@ -72,7 +72,7 @@ npm start
 
 ---
 
-Access the Application: 🌐 Open your browser and navigate to http://localhost:3000 to view the application.
+Access the Application: 🌐 Open your browser and navigate to https://bit-blog.onrender.com to view the application.
 
 ---
 
@@ -91,3 +91,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Contact 📧
 For any inquiries or feedback, please reach out to btech10106.22@bitmesra.ac.in or open an issue on the GitHub repository.
+
+Deployed Webiste Link: https://bit-blog.onrender.com/
