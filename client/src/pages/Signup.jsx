@@ -49,7 +49,7 @@ export default function Signup() {
           <Link to="/" className="py-3  font-bold dark:text-white text-4xl">
             <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-red-400 rounded-lg text-white">
               {/*// eslint-disable-next-line react/no-unescaped-entities */}
-              BIT's
+              BIT
             </span>
             Blog
           </Link>
